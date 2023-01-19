@@ -1,0 +1,78 @@
+﻿@model GamesFilterViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    body {
+        background-color: lightgrey
+    }
+</style>
+
+<h1>Game Reviews</h1>
+<h3>Curious about what others think about a game you have been wanting to play?</h3>
+
+<form asp-controller="Games" asp-action="Index" method="get">
+    <input type="text" name="GameNameSearched" placeholder="Search Game name" asp-for="@Model.Filter" />
+    <input type="submit" value="filter by Game Name"
+</form>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th><label asp-for="@Model.GamesList.First().GameName"></label></th>
+            <th><label asp-for="@Model.GamesList.First().Genre"></label></th>
+            <th><label asp-for="@Model.GamesList.First().Rating"></label></th>
+            <th>Links</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var videogame in Model.GamesList)
+        {
+
+            <tr>
+                <td>@videogame.GameName</td>
+                <td>@videogame.Genre</td>
+                <td>@videogame.Rating</td>
+                @*<td>@Html.ActionLink("Details of Game", "ShowDetails", new {id=videogame.GameId})</td>*@
+                <td><a asp-action="ShowDetails" asp-route-id="@videogame.GameId">Details of Game</a></td>
+                <td><a asp-action="Edit" asp-route-id="@videogame.GameId">Edit details</a></td>
+                <td><a asp-action="Delete" asp-route-id="@videogame.GameId">Delete Game</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+@*card deck *@
+<div class="container">
+    <div class="row">
+        @foreach (var videogame in Model.GamesList)
+        {
+            <div class="col">
+                <div class="card" style="width:300px">
+                    <img class="card-img-top" src="~/game.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">@videogame.GameName</h4>
+                        <br class="card-text">
+                        <label asp-for="@Model.GamesList.First().GameId"></label> @videogame.GameId<br>
+                        <label asp-for="@Model.GamesList.First().Genre"></label> @videogame.Genre<br>
+                        <label asp-for="@Model.GamesList.First().Rating"></label> @videogame.Rating<br>
+
+                        <a asp-action="Edit" asp-route-id="@videogame.GameId" class="btn btn-primary">Edit Profile</a>
+                    </div>
+                </div>
+
+            </div>
+        }
+        <a asp-action="Add">Add a game</a>
+
+
+
+
+
+
+
+
+

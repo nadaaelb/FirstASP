@@ -1,0 +1,35 @@
+﻿@model Games
+@{ViewBag.Title = "Add";
+    }
+<style>
+    body {
+        background-color: lightgrey
+    }
+</style>
+<title>Add</title>
+
+<h1> Not seeing a game listed? Add a game.</h1>
+<div asp-validation-summary="All"></div>
+<form asp-action="Add" method="post" enctype="multipart/form-data">
+    <label asp-for="GameId"></label> <input asp-for="GameId" /> <span asp-validation-for="GameId"></span> <br />
+
+    <label asp-for="GameName"></label> <input asp-for="GameName" /> <span asp-validation-for="GameName"></span> <br />
+
+    <label asp-for="Genre"></label> <select asp-for="Genre" asp-items="Html.GetEnumSelectList(typeof(Genre))"> </select><span asp-validation-for="Genre"></span> <br />
+
+    <label asp-for="Rating"></label> <input asp-for="Rating" /> <span asp-validation-for="Rating"></span><br />
+
+    <label asp-for="Review"></label> <input asp-for="Review" /><span asp-validation-for="Review"></span> <br />
+
+    <label asp-for="ReleaseDate"></label> <input asp-for="ReleaseDate" /> <span asp-validation-for="ReleaseDate"></span><br />
+
+    <label asp-for="Compatablity"></label> <input asp-for="Compatablity" /> <span asp-validation-for="Compatablity"></span><br />
+
+    <label asp-for="Recommended"></label> <input asp-for="Recommended" /> <span asp-validation-for="Recommended"></span><br />
+
+    <p>Upload an image of the game:</p>
+    <input type="file" name="ImageData" />
+    <br />
+    <input type="submit" value="Add game" />
+</form>
+

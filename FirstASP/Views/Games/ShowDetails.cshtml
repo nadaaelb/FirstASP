@@ -1,0 +1,50 @@
+﻿@model Games
+
+@{ViewBag.Title = "Show Details";
+}
+
+<style>
+    body {
+        background-color: lightgrey
+    }
+    P {
+        color: red
+    }
+</style>
+
+<title>ShowDetails</title>
+
+<h1>Showing details of the following game... @Model.GameName</h1>
+
+@if (Model != null)
+{
+    <div class="card" style="width:2000px">
+        @if (@ViewBag.ImageUrl != null)
+        {
+            <img class="rounded" src="@ViewBag.ImageUrl" alt="Cinque Terre" style="width:100%" />
+        }
+        else
+        {
+            <img class="rounded" src="~/default.png" alt="Cinque Terre" style="width:100%" />
+        }
+        <div class="rounded">
+
+            <h4 class="card-title">@Model.GameName</h4>
+            <br class="card-text" />
+            <p><label asp-for="Genre"></label>@Model.Genre</p>
+            <p><label asp-for="Review"></label>@Model.Review</p>
+            <p><label asp-for="ReleaseDate"></label>@Model.ReleaseDate</p>
+            <p><label asp-for="Rating"></label>@Model.Rating</p>
+            <p><label asp-for="Compatablity"></label>@Model.Compatablity</p>
+            <p><label asp-for="Recommended"></label>@Model.Recommended</p>
+
+            <a asp-action="Edit" asp-route-id="@Model.GameName" class="btn btn-primary">Edit Profile</a>
+        </div>
+    </div>
+
+}
+else
+{
+    <p> Sorry! Looks like we don't have that game reviewed yet!</p>
+}
+

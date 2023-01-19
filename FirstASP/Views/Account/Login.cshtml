@@ -1,0 +1,23 @@
+﻿@model LoginViewModel
+@{
+    //ViewData["Title"] = "Login";
+    ViewBag.Title = "Login";
+}
+
+<style>
+    body {
+        background-color: lightgrey
+    }
+</style>
+
+<h1>Welcome! Please login</h1>
+
+<form asp-action="Login">
+    <div asp-validation-summary="All"></div> @*display validation errors*@
+    <label asp-for="UserName"></label> <input asp-for="UserName" /> <br />
+    <label asp-for="Password"></label> <input asp-for="Password" /> <br />
+    <label asp-for="RememberMe"></label> <input asp-for="RememberMe" /> <br />
+
+    <br /><br />
+    <input type="submit" value="LOGIN" />
+</form>

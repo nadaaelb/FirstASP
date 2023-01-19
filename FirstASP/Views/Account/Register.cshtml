@@ -1,0 +1,26 @@
+﻿@model RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    
+}
+
+<style>
+    body {
+        background-color: lightgrey
+    }
+</style>
+
+
+<h1>Register</h1>
+<form asp-action="Register">
+    <div asp-validation-summary="All"></div>
+    <label asp-for="UserName"></label><input asp-for="UserName" /><br />
+    <label asp-for="FirstName"></label><input asp-for="FirstName" /><br />
+    <label asp-for="LastName"></label><input asp-for="LastName" /><br />
+    <label asp-for="Password"></label><input asp-for="Password" /><br />
+    <label asp-for="Email"></label><input asp-for="Email" /><br />
+    <label asp-for="Phone"></label><input asp-for="Phone" /><br />
+    <label asp-for="RememberMe"></label><input asp-for="RememberMe" /><br />
+
+    <input type="submit" value="SIGN UP" />
+</form>

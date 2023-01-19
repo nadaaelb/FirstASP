@@ -1,0 +1,23 @@
+body{background-color: #cbefcb;
+    font-family:"Lucida Sans";
+}
+    h1{text-align: center;
+    color:green
+    }
+title{text-align: center;}
+
+h2{text-align: center;
+text-decoration: underline;}
+    p{background-color: #ddf5dd;}
+
+    #TABLE{background-color:#c6d3c6 ;}
+
+    .MYCLASS{background-color: lightgoldenrodyellow;}
+
+    p::first-letter{color: green;
+         font-size: 3em;
+        font-weight: bold;
+        }
+        ::selection {background-color: pink;}
+
+        

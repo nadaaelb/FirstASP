@@ -1,0 +1,20 @@
+﻿@model Games
+@{ViewBag.Title= "Delete Game";
+   }
+
+<style>
+    body {
+        background-color: lightgrey
+    }
+</style>
+
+  <h1>Are you sure you want to delete the following game: @Model.GameName </h1>
+    <input asp-for=" GameId" type="hidden" />
+
+    <div class="text-center">
+        <form asp-action="Delete" method="post">
+            <button type="submit" class="btn btn-success">Yes, delete game</button>
+        
+            <button type="button" onclick="history.go(-1)" class="btn btn-danger">Return</button>
+        </form>
+    </div>

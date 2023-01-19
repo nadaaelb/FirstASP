@@ -1,0 +1,18 @@
+﻿body {
+    background-color: black
+}
+body {
+    color: darkred
+}
+h1 {
+    color: red
+}
+td {
+    color: red
+}
+p {
+    color: white
+}
+* {
+    box-sizing: border-box
+}

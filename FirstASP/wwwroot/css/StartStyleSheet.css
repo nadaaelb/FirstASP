@@ -1,0 +1,20 @@
+﻿/*btn {
+    display: block;
+    height: 1000%;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}*/
+
+button {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    height: 100%;
+    width: 100%;
+}
